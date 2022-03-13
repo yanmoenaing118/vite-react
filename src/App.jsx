@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import "./App.css";
 export default function App() {
   return (
@@ -11,9 +11,11 @@ export default function App() {
           paddingBottom: "1rem",
         }}
       >
-        <Link to="/invoces">Invoices</Link> |{" "}
+        <Link to="/invoices">Invoices</Link> |{" "}
         <Link to="/expenses">Expenses</Link>
       </nav>
+      <Outlet />
+      <footer style={{ padding: "10rem", backgroundColor: "#444" }}></footer>
     </div>
   );
 }
