@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Expenses from "./routes/expenses";
 import Invoices from "./routes/invoices";
 import Invoice from "./routes/invoice";
+import Profile from "./routes/profile";
 import StoreProvider from "./store";
 
 ReactDOM.render(
@@ -26,6 +27,7 @@ ReactDOM.render(
               />
               <Route path=":invoiceId" element={<Invoice />} />
             </Route>
+            <Route path="profile" element={<Profile />} />
             <Route
               path="*"
               element={

@@ -7,12 +7,11 @@ const getAuthenticatedUser = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     return user;
   }
-
   return null;
 };
 
 const initialState = {
-  user: getAuthenticatedUser(),
+  user: getAuthenticatedUser()
 };
 
 /**

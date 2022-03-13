@@ -7,8 +7,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>Hello This is my app</h1>
-
+      <h1>My app</h1>
       <nav
         style={{
           borderBottom: "solid 1px",
