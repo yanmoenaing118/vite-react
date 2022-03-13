@@ -7,6 +7,8 @@ import Expenses from "./routes/expenses";
 import Invoices from "./routes/invoices";
 import Invoice from "./routes/invoice";
 import Profile from "./routes/profile";
+import Login from "./routes/login";
+import RequireAuth from "./RequireAuth";
 import StoreProvider from "./store";
 
 ReactDOM.render(
@@ -15,6 +17,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />}>
+            <Route path="login" element={<Login />} />
             <Route path="expenses" element={<Expenses />} />
             <Route path="invoices" element={<Invoices />}>
               <Route
@@ -27,7 +30,14 @@ ReactDOM.render(
               />
               <Route path=":invoiceId" element={<Invoice />} />
             </Route>
-            <Route path="profile" element={<Profile />} />
+            <Route
+              path="profile"
+              element={
+                <RequireAuth>
+                  <Profile />
+                </RequireAuth>
+              }
+            />
             <Route
               path="*"
               element={

@@ -24,14 +24,7 @@ export default function App() {
             </button>
           </>
         ) : (
-          <button
-            onClick={() =>
-              handleLogin({ name: "Yan Moe Naing", password: "1bdeaf" })
-            }
-            style={{ padding: ".2em .5em" }}
-          >
-            Login
-          </button>
+          <Link to="/login">Login</Link>
         )}
       </nav>
       <Outlet />

@@ -9,7 +9,7 @@ export default function useAuth() {
         dispatch,
     } = store;
 
-    function handleLogin(body) {
+    function handleLogin(body, callback) {
         /**
          * post to Login endpoints => POST /login
          */
@@ -17,6 +17,9 @@ export default function useAuth() {
         dispatch({ type: "LOGIN", payload: body });
         if (typeof window != undefined) {
             localStorage.setItem("user", JSON.stringify(body));
+        }
+        if (typeof callback === "function") {
+            callback();
         }
     }
     function handleLogout() {
